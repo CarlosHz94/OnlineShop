@@ -1,5 +1,5 @@
 <?php 
-require("header.php");
+	require_once 'header.php';
 ?>
 
 	<main class="container mt-5">
@@ -7,7 +7,6 @@ require("header.php");
 			if(isset($_POST['search-submit'])){
 				$searchInput = $_POST['search'];
 				if(!empty($searchInput)){
-					//require_once "../include/functions.php";
 					$results = searchItem($searchInput);
 					if(sizeof($results) > 0){
 						echo "<h5 class=\"mb-5\">Results For '".$searchInput."'</h5>";

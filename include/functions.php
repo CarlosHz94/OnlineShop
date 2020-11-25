@@ -82,39 +82,42 @@
 				</div>";
 	}
 
+	/**
+	* Displays the item information for the item page.
+	* @param $item An object of type Product
+	*/
 	function displayItem($item){
-		echo "	
-					<div class=\"d-flex flex-wrap container\">
-						<div class=\"col\">
-							<img src=\"".ROOT_PATH.$item->getImg()."\" class=\"rounded shadow mx-auto d-block img-thumbnail\">
-						</div>
-						<div class=\"col mx-5\">
-							<h5 class=\"mb-4\">".$item->getName()."</h5>
-							<ul>
-								<li>Really long description of a feature of this item. Really long description of a feature of this item. Really long description of a feature of this item. Really long description of a feature of this item.</li>
-								<li>Really long description of a feature of this item. Really long description of a feature of this item. Really long description of a feature of this item. Really long description of a feature of this item.</li>
-								<li>Short description of a feature of this item.</li>
-								<li>This is a medium description of a feature of this item. This is a medium description of a feature of this item.</li>
-							</ul>
-						</div>
-						<div class=\"col\">
-							<div class=\"card shadow mx-auto pt-2\" style=\"width: 18rem\">
-								<div class=\"card-body mx-auto\">
-									<h5 class=\"text-center mb-5\">CND ".$item->getPrice()."</h5>
-									<form class=\"form-group\" action=\"".ROOT_PATH."include/addToCart.php\" method=\"post\">
-										<input name=\"itemId\" value=\"".$item->getId()."\" type=\"hidden\">
-										<select class=\"custom-select\" name=\"qty\" style=\"width: 4rem\">
-											<option selected=\"true\" value=\"1\">1</option>";
-											for($i = 2; $i <= 10; $i++){
-												echo "<option value=\"".$i."\">".$i."</option>";
-											}
-									echo "</select>
-										<button class=\"btn btn-success\" type=\"submit\" name=\"add-submit\">Add to cart</button>
-									</form>
-								</div>
+		echo "	<div class=\"d-flex flex-wrap container\">
+					<div class=\"col mt-5\">
+						<img src=\"".ROOT_PATH.$item->getImg()."\" class=\"rounded shadow mx-auto d-block img-thumbnail\">
+					</div>
+					<div class=\"col mx-5\">
+						<h5 class=\"mb-4\">".$item->getName()."</h5>
+						<ul>
+							<li>Really long description of a feature of this item. Really long description of a feature of this item. Really long description of a feature of this item. Really long description of a feature of this item.</li>
+							<li>Really long description of a feature of this item. Really long description of a feature of this item. Really long description of a feature of this item. Really long description of a feature of this item.</li>
+							<li>Short description of a feature of this item.</li>
+							<li>This is a medium description of a feature of this item. This is a medium description of a feature of this item.</li>
+						</ul>
+					</div>
+					<div class=\"col\">
+						<div class=\"card shadow mx-auto pt-2\" style=\"width: 18rem\">
+							<div class=\"card-body mx-auto\">
+								<h5 class=\"text-center mb-5\">CND ".$item->getPrice()."</h5>
+								<form class=\"form-group\" action=\"".ROOT_PATH."include/addToCart.php\" method=\"post\">
+									<input name=\"itemId\" value=\"".$item->getId()."\" type=\"hidden\">
+									<select class=\"custom-select\" name=\"qty\" style=\"width: 4rem\">
+										<option selected=\"true\" value=\"1\">1</option>";
+										for($i = 2; $i <= 10; $i++){
+											echo "<option value=\"".$i."\">".$i."</option>";
+										}
+								echo "</select>
+									<button class=\"btn btn-success\" type=\"submit\" name=\"add-submit\">Add to cart</button>
+								</form>
 							</div>
 						</div>
-					</div>";
+					</div>
+				</div>";
 	}
 
 	/** 
@@ -136,6 +139,10 @@
 		return $resultsArray;
 	}
 
+	/**
+	* Displays the search results.
+	* @param $resultsArray The array containing the results from the search query
+	*/
 	function displaySearchResults(array $resultsArray){
 		displayItemCards($resultsArray);
 	}
@@ -243,6 +250,10 @@
 		return $cartArray;
 	}
 
+	/**
+	* Displays the items in the user's cart for the cart page.
+	* @param $cartArray An array that contains the user's cart items
+	*/
 	function displayCartItems(array $cartArray){
 		foreach($cartArray as $cartItem){
 			$price = (double)substr($cartItem->getProduct()->getPrice(), 1);

@@ -1,5 +1,5 @@
 <?php 
-require("header.php");
+	require_once 'header.php';
 ?>
 
 	<main role="main" class="my-5">
