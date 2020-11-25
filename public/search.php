@@ -2,7 +2,7 @@
 require("header.php");
 ?>
 
-	<main>
+	<main class="container mt-5">
 		<?php
 			if(isset($_POST['search-submit'])){
 				$searchInput = $_POST['search'];
@@ -10,7 +10,8 @@ require("header.php");
 					//require_once "../include/functions.php";
 					$results = searchItem($searchInput);
 					if(sizeof($results) > 0){
-						displayItems($results);
+						echo "<h5 class=\"mb-5\">Results For '".$searchInput."'</h5>";
+						displaySearchResults($results);
 					}else{
 						//no results
 						echo "no results";
@@ -27,8 +28,8 @@ require("header.php");
 		?>
 		
 	</main>
-	</body>
+</body>
 
 <?php
-require("footer.php");
+//require("footer.php");
 ?>

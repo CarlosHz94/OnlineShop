@@ -26,27 +26,27 @@ require("header.php");
 			?>
 			<div class="container mt-5 ">
 				<div class="d-flex align-content-center">
-				<div class="card shadow-lg mx-auto text-center" style="width: 25rem;">
-					<div class="card-header text-white bg-dark">
-						<h1 class="text-center">Login</h1>
-					</div>
-					<div class="card-body mt-3 d-flex justify-content-center">
-						<form class="form" action="<?php echo ROOT_PATH . "include/login.php"?>" method="post">
-							<div class="form-row">
-								<div class="form-group">
-									<input class="form-control" type="text" name="mailuid" placeholder="Username or E-mail">
+					<div class="card shadow-lg mx-auto text-center" style="width: 25rem;">
+						<div class="card-header text-white bg-dark">
+							<h1 class="text-center">Login</h1>
+						</div>
+						<div class="card-body mt-3 d-flex justify-content-center">
+							<form class="form" action="<?php echo ROOT_PATH . "include/login.php"?>" method="post">
+								<div class="form-row">
+									<div class="form-group">
+										<input class="form-control" type="text" name="mailuid" placeholder="Username or E-mail">
+									</div>
 								</div>
-							</div>
-							<div class="form-row">
-								<div class="form-group">
-									<input class="form-control" type="password" name="pwd" placeholder="Password">
+								<div class="form-row">
+									<div class="form-group">
+										<input class="form-control" type="password" name="pwd" placeholder="Password">
+									</div>
 								</div>
-							</div>
-							<button class="btn btn-outline-dark" type="submit" name="login-submit">Login</button>
-						</form>
+								<button class="btn btn-outline-dark" type="submit" name="login-submit">Login</button>
+							</form>
+						</div>
 					</div>
 				</div>
-			</div>
 			</div>
 		</div>
 		

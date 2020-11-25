@@ -1,13 +1,19 @@
 <?php 
-require("header.php");
+	require_once 'header.php';
 ?>
 
 	<main>
 		<!--Display some products-->
-		<div class="container">
+		<div class="container mt-5">
 			<?php
 				$cart = getCartItems();
-				displayItems($cart);
+				if(sizeof($cart) > 0){
+					displayCartItems($cart);
+				}else{
+					echo "<h5 class=\"text-center\">Cart is empty</h5>";
+				}
+
+				//displayItems($cart);
 				
 			?>
 		</div>

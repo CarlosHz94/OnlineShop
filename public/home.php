@@ -12,13 +12,14 @@ require("header.php");
 			</div>
 		</div>
 		<!--Display some products-->
-		<div class="container my-5">
-			<div class="card-deck">
+		<div class="container mt-5">
+			<!--<div class="card-deck">-->
 				<?php
 					$items = getShowcaseItems();
-					displayItems($items);
+					displayItemCards($items);
+					
 				?>
-			</div>
+			<!--</div>-->
 		</div>
 		
 	</main>

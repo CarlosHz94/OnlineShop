@@ -23,9 +23,11 @@
 		public function getName(){
 			return $this->pName;
 		}
+
 		public function getPrice(){
 			return $this->pPrice;
 		}
+		
 		public function getImg(){
 			return $this->pImg;
 		}
